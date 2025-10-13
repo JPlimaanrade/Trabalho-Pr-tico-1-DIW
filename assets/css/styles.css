@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(139, 139, 139);
+}
+.Cards_top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.autoria_e_social_media ul{
+    margin-top: 10px;
+}
+.autoria_e_social_media ul li{
+    list-style: none;
+}
+.autoria_e_social_media img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    
+}
+.autoria_e_social_media{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+}
+.instagram-icon {
+    width: 50px !important;
+    height: 50px !important;
+}
+.social_media{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    gap: 15px;
+    margin-top: 10px;
+}
+.sobre{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
