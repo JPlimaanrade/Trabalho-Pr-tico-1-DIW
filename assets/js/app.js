@@ -1,10 +1,8 @@
 // Executa quando a página terminar de carregar
-document.addEventListener("DOMContentLoaded", async () => {
-    // Pega o ID da URL (ex: detalhes.html?id=guia)
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+document.addEventListener("DOMContentLoaded", () => {
+    const cardsContainer = document.querySelector(".Cards_top");
 
-    // Dados com todas as seções
+    // Dados de todos os cards
     const dados = [
         {
             id: "guia",
@@ -80,27 +78,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     ];
 
-    // Procura o item com o ID correspondente
-    const item = dados.find(d => d.id === id);
+    // Cria os cards dinamicamente
+    dados.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("card", "m-3");
+        card.style.width = "18rem";
+        card.style.backgroundColor = "rgb(18, 119, 9)";
+        card.innerHTML = `
+            <img src="${item.imagem}" class="card-img-top" alt="${item.titulo}">
+            <div class="card-body">
+                <h4 class="card-title">${item.titulo}</h4>
+                <p class="card-text">${item.descricao}</p>
+                <a href="/detalhe.html?id=${item.id}" class="btn btn-primary">Detalhes</a>
+            </div>
+        `;
+        cardsContainer.appendChild(card);
+    });
 
-    // Exibe o conteúdo na página detalhes
-    const main = document.querySelector("main");
-    if (item) {
-        main.innerHTML = `
-            <div class="container text-center text-white bg-dark py-5">
-                <h1>${item.titulo}</h1>
-                <img src="${item.imagem}" class="img-fluid my-3 rounded" alt="${item.titulo}">
-                <p class="fs-5">${item.descricao}</p>
-                <a href="/index.html" class="btn btn-secondary mt-3">Voltar</a>
-            </div>
-        `;
-    } else {
-        main.innerHTML = `
-            <div class="container text-center text-white bg-dark py-5">
-                <h1>Conteúdo não encontrado</h1>
-                <p>Volte para a página inicial e selecione um item válido.</p>
-                <a href="/index.html" class="btn btn-secondary mt-3">Voltar</a>
-            </div>
-        `;
-    }
 });
