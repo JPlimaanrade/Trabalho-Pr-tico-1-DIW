@@ -1,77 +1,93 @@
-*{
+/*Rezet global*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-footer{
+
+footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: rgb(139, 139, 139);
 }
-.Cards_top{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-.autoria_e_social_media ul{
+
+
+
+.autoria_e_social_media ul {
     margin-top: 10px;
 }
-.autoria_e_social_media ul li{
+
+.autoria_e_social_media ul li {
     list-style: none;
 }
-.autoria_e_social_media img{
+
+.autoria_e_social_media img {
     width: 150px;
     height: 150px;
     border-radius: 5%;
-    
+
 }
-.autoria_e_social_media{
+
+.autoria_e_social_media {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 10px;
 }
+
 .instagram-icon {
     width: 50px !important;
     height: 50px !important;
 }
-.social_media{
+
+.social_media {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 10px;
     gap: 15px;
     margin-top: 10px;
 }
-.sobre{
+
+.sobre {
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     max-width: 500px;
 }
-#detalhes{
+
+.Cards_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#detalhes {
     background-color: #3d3d3d;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px;
-    }
-#imagem{
-    width: 800px;
-    height: 400px;
+}
+
+#imagem {
+    max-width: 800px;
+    max-height: 400px;
     border-radius: 10px;
 }
-#titulo{
+
+#titulo {
     color: rgb(231, 134, 0);
     font-size: 2em;
     font-weight: bold;
     text-align: center;
 }
-#descricao{
+
+#descricao {
     color: white;
     max-width: 800px;
     text-align: center;
@@ -79,4 +95,92 @@ footer{
     background-color: rgba(0, 0, 0, 0.558);
     border-radius: 10px;
     padding: 10px;
+}
+
+#dicas {
+    color: rgb(255, 255, 255);
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.558);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#curiosidades {
+    color: rgb(255, 255, 255);
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.558);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.topicos {
+    color: rgb(0, 216, 29) !important;
+    font-weight: bold;
+}
+
+#imagens_relacionadas {
+    max-width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 0px;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+#imagens_relacionadas img {
+    flex-shrink: 0;
+    max-height: 250px;
+
+}
+.contentrelacioned{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.desc {
+    background-color: rgb(54, 54, 54);
+    text-align: center;
+    white-space: normal;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+}
+/*Portabilidade todo o resto que ficou esquisito*/
+@media screen and (max-width: 768px) {
+    #imagem {
+        max-width: 90%;
+        height: auto;
+    }
+
+    #titulo {
+        font-size: 1.5em;
+    }
+
+    #descricao {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    #imagens_relacionadas img {
+        flex-shrink: 0;
+        max-height: 156px;
+
+    }
+}
+/*Portabilidade telefones pequenos*/
+@media screen and (max-width: 321px) {
+    #nomedosite {
+        font-size: 1.4em;
+
+    }
 }
