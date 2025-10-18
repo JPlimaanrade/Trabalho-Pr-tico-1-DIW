@@ -1,5 +1,27 @@
 //Só inicia o script após o carregamento completo da página
 document.addEventListener("DOMContentLoaded", () => {
+    //JSON do carrossel
+    const carouselData = [
+    {
+        titulo: "Guia Básico",
+        descricao: "Bem vindo ao Deepwoken Fan Hub! Clique em saiba mais para aprender sobre o jogo!",
+        imagem: "/assets/img/Banners/Banner_Deepwoken1.jpg",
+        link: "/detalhe.html?id=guia"
+    },
+    {
+        titulo: "Etris",
+        descricao: "Um Reino próspero e em constante evolução",
+        imagem: "/assets/img/Banners/Banner_Deepwoken2.png",
+        link: "/detalhe.html?id=etris"
+    },
+    {
+        titulo: "The Deepths",
+        descricao: "O Submundo do jogo, MORTE PERMANENTE!",
+        imagem: "/assets/img/Banners/Banner_Deepwoken3.png",
+        link: "/detalhe.html?id=deepths"
+    }
+    ];
+
     //JSON dos cards
     const dados = [
         //Guia Básico
@@ -86,7 +108,32 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "A segunda camada do Deep, uma das áreas mais perigosas do jogo. Explore e descubra seus segredos.",
             imagem: "/assets/img/Cards/Layer2_Card.jpg"
         }
-    ];
+    ]; 
+    //Aonde a Função para criar o carrossel será inserida
+    const carouselInner = document.querySelector(".carousel-inner");
+    const carouselIndicators = document.querySelector(".carousel-indicators");
+    //Função para criar o carrosel
+    carouselData.forEach((item, index) => {
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if(index === 0) carouselItem.classList.add("active");
+    carouselItem.innerHTML = `
+        <img src="${item.imagem}" class="d-block w-100" alt="${item.titulo}">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${item.titulo}</h5>
+            <p>${item.descricao}</p>
+            <a href="${item.link}" class="btn btn-primary">Saiba Mais</a>
+        </div>
+    `;
+    carouselInner.appendChild(carouselItem);
+    
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.setAttribute("data-bs-target", "#carouselExampleCaptions");
+    indicator.setAttribute("data-bs-slide-to", index);
+    if(index === 0) indicator.classList.add("active");
+    carouselIndicators.appendChild(indicator);
+});
     //Aonde a Função para criar os cards será inserida
     const cardsContainer = document.querySelector(".Cards_top");
     //Função para criar os cards
